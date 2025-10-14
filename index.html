@@ -2,11 +2,74 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accueil — Diocèse de Kolwezi</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-<script defer src="assets/js/main.js"></script>
-<img src="assets/img/hero-cathedral.jpg" alt="Cathédrale" class="hero-img"/>
+  
+  <!-- Boxicons -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    /* === RESET & BASE === */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:#333; background:#f9f9f9;}
+    a {text-decoration:none; color: inherit;}
+    img {max-width:100%; display:block;}
+
+    /* === HEADER === */
+    .site-header {background:#005a87; color:white; position:sticky; top:0; z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+    .site-header .container {display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem;}
+    .brand {display:flex; align-items:center;}
+    .brand .logo {height:50px; margin-right:0.5rem;}
+    .brand-title {font-weight:bold; font-size:1.3rem;}
+    .site-nav a {margin-left:1.5rem; padding:0.5rem; transition:0.3s;}
+    .site-nav a:hover, .site-nav a.active {background:white; color:#005a87; border-radius:5px;}
+    .nav-toggle {display:none; background:none; border:none; font-size:1.5rem; color:white; cursor:pointer;}
+
+    /* === HERO === */
+    .hero {position:relative; height:80vh; display:flex; align-items:center; justify-content:center; overflow:hidden;}
+    .hero-img {width:100%; height:100%; object-fit:cover; filter:brightness(0.6);}
+    .hero-overlay {position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.3);}
+    .hero-content {position:absolute; text-align:center; color:white; max-width:800px; padding:0 1rem;}
+    .hero-content h1 {font-size:3rem; margin-bottom:1rem;}
+    .hero-content p {font-size:1.2rem; margin-bottom:2rem;}
+    .hero-buttons .btn {padding:0.8rem 1.5rem; margin:0 0.5rem; border-radius:5px; font-weight:bold; display:inline-block; transition:0.3s;}
+    .btn-primary {background:#ff9800; color:white;}
+    .btn-primary:hover {background:#e68a00;}
+    .btn-secondary {background:transparent; border:2px solid #ff9800; color:white;}
+    .btn-secondary:hover {background:#ff9800; color:white;}
+
+    /* === QUICK CARDS === */
+    .quick-cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; padding:3rem 1rem; max-width:1200px; margin:0 auto;}
+    .card {background:white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; transition:0.3s;}
+    .card:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+    .card i {font-size:3rem; color:#005a87; margin-bottom:1rem; display:block;}
+    .card h3 {margin-bottom:0.5rem;}
+    .card-link {margin-top:1rem; display:inline-block; color:#ff9800; font-weight:bold;}
+
+    /* === EVENTS === */
+    .events {padding:3rem 1rem; max-width:1200px; margin:0 auto;}
+    .events h2 {text-align:center; margin-bottom:2rem; color:#005a87;}
+    .events-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem;}
+    .event-card {background:white; padding:1rem 1.5rem; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;}
+    .event-card:hover {transform:translateY(-3px); box-shadow:0 8px 18px rgba(0,0,0,0.15);}
+    .event-card h3 {margin-bottom:0.5rem; color:#ff9800;}
+
+    /* === FOOTER === */
+    .site-footer {background:#005a87; color:white; text-align:center; padding:1.5rem;}
+    .site-footer a {color:#ff9800;}
+
+    /* === RESPONSIVE === */
+    @media(max-width:768px){
+      .site-nav {display:none; flex-direction:column; background:#005a87; position:absolute; top:70px; right:0; width:200px; border-radius:5px;}
+      .nav-toggle {display:block;}
+      .site-nav a {margin:0.5rem 1rem;}
+    }
+
+    /* === ANIMATIONS === */
+    .fade-in-section {opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards; animation-delay:0.2s;}
+    @keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
+  </style>
+
 </head>
 <body class="page">
 
@@ -82,7 +145,6 @@
           <h3>Journée Caritas</h3>
           <p>Dimanche 2 novembre 2025 - Centre communautaire</p>
         </article>
-        <!-- Ajouter d’autres événements ici -->
       </div>
     </section>
 
@@ -94,6 +156,17 @@
       <p>© 2025 Diocèse de Kolwezi — Tous droits réservés · <a href="README.md">Documentation</a></p>
     </div>
   </footer>
+
+  <!-- JS NAVIGATION -->
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle && toggle.addEventListener('click', ()=> {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      nav.style.display = expanded ? '' : 'flex';
+    });
+  </script>
 
 </body>
 </html>
