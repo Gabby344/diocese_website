@@ -1,13 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pastorale — Diocèse</title>
+  <title>Pastorale — Diocèse de Kolwezi</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body class="page">
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Accueil du diocèse">
@@ -15,45 +18,58 @@
         <span class="brand-title">Diocèse - Kolwezi</span>
       </a>
       <nav class="site-nav" aria-label="Navigation principale">
-        <a href="index.html" class="">Accueil</a>
-        <a href="diocese.html" class="">Diocèse</a>
-        <a href="paroisses.html" class="">Paroisses</a>
+        <a href="index.html">Accueil</a>
+        <a href="diocese.html">Diocèse</a>
+        <a href="paroisses.html">Paroisses</a>
         <a href="pastorale.html" class="active">Pastorale</a>
-        <a href="actualites.html" class="">Actualités</a>
-        <a href="caritas.html" class="">Caritas</a>
-        <a href="education.html" class="">Éducation</a>
-        <a href="contact.html" class="">Contact</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="caritas.html">Caritas</a>
+        <a href="education.html">Éducation</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir la navigation">☰</button>
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container main">
-    
-<article>
-  <h2>Pastorale et Services</h2>
-  <section>
-    <h3>Sacraments</h3>
-    <p>Informations sur baptême, mariage, communion, confession et accompagnement spirituel.</p>
-  </section>
 
-  <section>
-    <h3>Mouvements & Associations</h3>
-    <p>Scouts, chorales, groupes de jeunes, etc.</p>
-  </section>
+    <section class="pastorale-intro">
+      <h1>Pastorale et Services</h1>
+      <p>Découvrez les activités pastorales, sacrements, mouvements et formations pour accompagner la vie spirituelle de la communauté.</p>
+    </section>
 
-  <section>
-    <h3>Formation</h3>
-    <p>Catéchèse, préparation au sacerdoce, sessions de formation pour animateurs.</p>
-  </section>
-</article>
+    <section class="pastorale-grid">
+      <!-- Sacrements -->
+      <article class="pastorale-card">
+        <i class='bx bx-bible'></i>
+        <h2>Sacrements</h2>
+        <p>Informations sur baptême, mariage, communion, confession et accompagnement spirituel.</p>
+      </article>
+
+      <!-- Mouvements & Associations -->
+      <article class="pastorale-card">
+        <i class='bx bx-group'></i>
+        <h2>Mouvements & Associations</h2>
+        <p>Scouts, chorales, groupes de jeunes et autres associations pastorales actives.</p>
+      </article>
+
+      <!-- Formation -->
+      <article class="pastorale-card">
+        <i class='bx bx-book-open'></i>
+        <h2>Formation</h2>
+        <p>Catéchèse, préparation au sacerdoce et sessions de formation pour animateurs.</p>
+      </article>
+    </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Diocèse — Tous droits réservés · <a href="README.md">Documentation</a></p>
+    <div class="container footer-inner">
+      <p>© 2025 Diocèse de Kolwezi — Tous droits réservés · <a href="README.md">Documentation</a></p>
     </div>
   </footer>
+
 </body>
 </html>
