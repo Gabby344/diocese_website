@@ -1,13 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Accueil — Diocèse</title>
+  <title>Accueil — Diocèse de Kolwezi</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body class="page">
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Accueil du diocèse">
@@ -16,51 +19,81 @@
       </a>
       <nav class="site-nav" aria-label="Navigation principale">
         <a href="index.html" class="active">Accueil</a>
-        <a href="diocese.html" class="">Diocèse</a>
-        <a href="paroisses.html" class="">Paroisses</a>
-        <a href="pastorale.html" class="">Pastorale</a>
-        <a href="actualites.html" class="">Actualités</a>
-        <a href="caritas.html" class="">Caritas</a>
-        <a href="education.html" class="">Éducation</a>
-        <a href="contact.html" class="">Contact</a>
+        <a href="diocese.html">Diocèse</a>
+        <a href="paroisses.html">Paroisses</a>
+        <a href="pastorale.html">Pastorale</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="caritas.html">Caritas</a>
+        <a href="education.html">Éducation</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir la navigation">☰</button>
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container main">
-    
-<section class="hero">
-  <img src="assets/img/placeholder.jpg" alt="Cathédrale" class="hero-img"/>
-  <div class="hero-content">
-    <h1>Bienvenue au Diocèse</h1>
-    <p>Message de bienvenue de Son Excellence l'Évêque. Retrouvez ici les informations, événements et services du diocèse.</p>
-    <a class="btn" href="actualites.html">Voir les dernières actualités</a>
-    <a class="btn ghost" href="paroisses.html">Trouver une paroisse</a>
-  </div>
-</section>
 
-<section class="quick-cards">
-  <article class="card">
-    <h3>Messe en ligne</h3>
-    <p>Accédez aux retransmissions et horaires.</p>
-  </article>
-  <article class="card">
-    <h3>Caritas</h3>
-    <p>Projets sociaux, santé et éducation.</p>
-  </article>
-  <article class="card">
-    <h3>Contact</h3>
-    <p>Coordonnées du Siège épiscopal et formulaire.</p>
-  </article>
-</section>
+    <!-- HERO -->
+    <section class="hero">
+      <img src="assets/img/hero-cathedral.jpg" alt="Cathédrale" class="hero-img"/>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Bienvenue au Diocèse de Kolwezi</h1>
+        <p>Découvrez les activités, événements et services proposés par le diocèse. Un lieu de foi, de partage et d’engagement communautaire.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="actualites.html"><i class='bx bx-news'></i> Dernières actualités</a>
+          <a class="btn btn-secondary" href="paroisses.html"><i class='bx bx-map'></i> Trouver une paroisse</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK CARDS -->
+    <section class="quick-cards">
+      <article class="card">
+        <i class='bx bx-church'></i>
+        <h3>Messe en ligne</h3>
+        <p>Accédez aux retransmissions et horaires des messes.</p>
+        <a href="paroisses.html" class="card-link">Voir plus <i class='bx bx-right-arrow-alt'></i></a>
+      </article>
+      <article class="card">
+        <i class='bx bx-heart'></i>
+        <h3>Caritas</h3>
+        <p>Projets sociaux, santé et éducation pour la communauté.</p>
+        <a href="caritas.html" class="card-link">Découvrir <i class='bx bx-right-arrow-alt'></i></a>
+      </article>
+      <article class="card">
+        <i class='bx bx-envelope'></i>
+        <h3>Contact</h3>
+        <p>Coordonnées du Siège épiscopal et formulaire de contact.</p>
+        <a href="contact.html" class="card-link">Contacter <i class='bx bx-right-arrow-alt'></i></a>
+      </article>
+    </section>
+
+    <!-- SECTION ÉVÉNEMENTS (OPTIONNEL) -->
+    <section class="events">
+      <h2>Événements à venir</h2>
+      <div class="events-grid">
+        <article class="event-card">
+          <h3>Conférence Spirituelle</h3>
+          <p>Samedi 25 octobre 2025 - Évêché de Kolwezi</p>
+        </article>
+        <article class="event-card">
+          <h3>Journée Caritas</h3>
+          <p>Dimanche 2 novembre 2025 - Centre communautaire</p>
+        </article>
+        <!-- Ajouter d’autres événements ici -->
+      </div>
+    </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Diocèse — Tous droits réservés · <a href="README.md">Documentation</a></p>
+    <div class="container footer-inner">
+      <p>© 2025 Diocèse de Kolwezi — Tous droits réservés · <a href="README.md">Documentation</a></p>
     </div>
   </footer>
+
 </body>
 </html>
