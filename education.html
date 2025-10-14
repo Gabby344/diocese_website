@@ -4,9 +4,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Éducation — Diocèse de Kolwezi</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="assets/js/main.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* Reset et styles généraux */
+    body, h1, h2, h3, p, ul { margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
+    a { text-decoration: none; color: inherit; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+    /* Header */
+    .site-header { background: #004080; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .brand { display: flex; align-items: center; gap: 0.5rem; }
+    .logo { height: 50px; }
+    .site-nav { display: flex; gap: 1rem; }
+    .site-nav a { color: #fff; font-weight: 500; padding: 0.5rem; transition: 0.3s; }
+    .site-nav a:hover, .site-nav a.active { background: #003060; border-radius: 5px; }
+
+    /* Mobile nav */
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: #fff; cursor: pointer; }
+
+    /* Hero */
+    .education-intro { background: url('assets/img/placeholder.jpg') no-repeat center center/cover; color: #fff; padding: 6rem 1rem 4rem; text-align: center; position: relative; }
+    .education-intro::after { content: ""; position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.5); }
+    .education-intro h1, .education-intro p { position: relative; z-index: 1; }
+    .education-intro h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .education-intro p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
+
+    /* Schools grid */
+    .schools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .school-card { background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
+    .school-card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+    .school-card i { font-size: 3rem; color: #004080; margin-bottom: 1rem; }
+    .school-card h3 { margin-bottom: 0.5rem; color: #004080; }
+
+    /* Higher education */
+    .higher-education { background: #e6f0ff; padding: 3rem 1rem; border-radius: 10px; margin-top: 3rem; text-align: center; }
+    .higher-education h2 { color: #004080; margin-bottom: 1rem; }
+    .higher-education p { max-width: 800px; margin: 0 auto; }
+
+    /* Footer */
+    .site-footer { background: #004080; color: #fff; padding: 1rem 0; text-align: center; margin-top: 3rem; }
+    .site-footer a { color: #fff; text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width:768px) {
+      .site-nav { flex-direction: column; display: none; background: #004080; position: absolute; top: 100%; right: 0; width: 200px; border-radius: 0 0 10px 10px; }
+      .nav-toggle { display: block; }
+    }
+  </style>
 </head>
 <body class="page">
 
@@ -34,7 +80,7 @@
   <!-- MAIN -->
   <main class="container main">
 
-    <!-- SECTION INTRO EDUCATION -->
+    <!-- HERO -->
     <section class="education-intro">
       <h1>Écoles et Institutions du Diocèse</h1>
       <p class="intro">
@@ -42,28 +88,24 @@
       </p>
     </section>
 
-    <!-- SECTION LISTE DES ÉCOLES -->
-    <section class="education-list">
-      <h2>Nos Établissements</h2>
+    <!-- SCHOOLS GRID -->
+    <section class="education-list container">
+      <h2 style="text-align:center; margin-top:2rem; color:#004080;">Nos Établissements</h2>
       <div class="schools-grid">
-        <!-- Exemple d’école -->
         <div class="school-card">
           <i class='bx bx-school'></i>
           <h3>Lycée Sainte-Anne</h3>
           <p>Établissement secondaire offrant un enseignement général et chrétien de qualité.</p>
         </div>
-
         <div class="school-card">
           <i class='bx bx-school'></i>
           <h3>Collège Saint-Pierre</h3>
           <p>Collège catholique proposant un programme éducatif complet et innovant.</p>
         </div>
-
-        <!-- Ajouter d’autres écoles ici -->
       </div>
     </section>
 
-    <!-- SECTION ÉDUCATION SUPÉRIEURE (OPTIONNELLE) -->
+    <!-- HIGHER EDUCATION -->
     <section class="higher-education">
       <h2>Enseignement Supérieur</h2>
       <p>Le diocèse soutient également des institutions supérieures et des centres de formation professionnelle pour accompagner la jeunesse vers un avenir prometteur.</p>
@@ -78,5 +120,17 @@
     </div>
   </footer>
 
+  <!-- JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.site-nav');
+      toggle && toggle.addEventListener('click', ()=> {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !expanded);
+        nav.style.display = expanded ? '' : 'flex';
+      });
+    });
+  </script>
 </body>
 </html>
