@@ -1,129 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caritas & Œuvres Sociales — Diocèse de Kolwezi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="assets/js/main.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caritas & Œuvres Sociales — Diocèse de Kolwezi</title>
+<link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<style>
+  /* Reset & Base */
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
+  body { background:#f8fafc; color:#1f2937; line-height:1.6; }
+  a { text-decoration:none; color:inherit; }
+
+  /* Header */
+  header { background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); position:sticky; top:0; z-index:50; }
+  .container { max-width:1200px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+  .logo { height:50px; }
+  nav a { margin-left:20px; font-weight:600; color:#374151; transition:0.3s; }
+  nav a:hover, nav a.active { color:#1d4ed8; border-bottom:2px solid #1d4ed8; }
+  .nav-toggle { display:none; font-size:28px; cursor:pointer; }
+
+  /* Hero */
+  .hero { position:relative; background:url('assets/img/caritas_hero.jpg') center/cover no-repeat; color:#fff; text-align:center; padding:120px 20px; }
+  .hero::before { content:""; position:absolute; inset:0; background:rgba(29,78,216,0.7); }
+  .hero-content { position:relative; z-index:1; max-width:800px; margin:0 auto; }
+  .hero-content h1 { font-size:3rem; margin-bottom:15px; }
+  .hero-content p { font-size:1.2rem; opacity:0.9; }
+
+  /* Main */
+  main { padding:60px 20px; }
+  h2 { font-size:2rem; margin-bottom:40px; text-align:center; color:#1d4ed8; }
+
+  .grid { display:grid; gap:30px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+
+  /* Card */
+  .card { background:#fff; border-radius:20px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:all 0.3s; }
+  .card img { width:100%; height:200px; object-fit:cover; }
+  .card-content { padding:20px; }
+  .card-content h3 { font-size:1.3rem; color:#1d4ed8; margin-bottom:10px; }
+  .card-content p { color:#4b5563; line-height:1.5; }
+
+  .card:hover { transform:translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.15); }
+
+  /* CTA Don */
+  .cta { background:#1d4ed8; color:#fff; text-align:center; padding:60px 20px; border-radius:30px; margin-top:60px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+  .cta h3 { font-size:2rem; margin-bottom:20px; }
+  .cta p { max-width:600px; margin:0 auto 30px; opacity:0.9; }
+  .cta a { background:#facc15; color:#1d4ed8; font-weight:600; padding:15px 40px; border-radius:50px; transition:0.3s; display:inline-block; }
+  .cta a:hover { background:#eab308; }
+
+  /* Footer */
+  footer { background:#1d4ed8; color:#fff; text-align:center; padding:40px 20px; margin-top:60px; }
+  footer a { color:#fde68a; }
+  footer a:hover { text-decoration:underline; }
+
+  /* Responsive */
+  @media(max-width:768px){ .nav-toggle { display:block; } nav { display:none; flex-direction:column; width:100%; margin-top:10px; } nav a { margin:10px 0; } }
+</style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-[Poppins]">
-  <!-- HEADER -->
-  <header class="shadow-md bg-white sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <a href="index.html" class="flex items-center space-x-3">
-        <img src="assets/img/logo.svg" alt="Logo du Diocèse" class="h-12">
-        <span class="text-xl font-bold text-blue-900">Diocèse de Kolwezi</span>
-      </a>
-      <nav class="hidden md:flex space-x-6 text-sm font-semibold text-gray-700">
-        <a href="index.html" class="hover:text-blue-700">Accueil</a>
-        <a href="diocese.html" class="hover:text-blue-700">Diocèse</a>
-        <a href="paroisses.html" class="hover:text-blue-700">Paroisses</a>
-        <a href="pastorale.html" class="hover:text-blue-700">Pastorale</a>
-        <a href="actualites.html" class="hover:text-blue-700">Actualités</a>
-        <a href="caritas.html" class="text-blue-900 border-b-2 border-blue-900">Caritas</a>
-        <a href="education.html" class="hover:text-blue-700">Éducation</a>
-        <a href="contact.html" class="hover:text-blue-700">Contact</a>
-      </nav>
-      <button class="md:hidden text-2xl text-blue-900" id="menu-toggle">☰</button>
-    </div>
+<body>
 
-    <!-- Menu mobile -->
-    <nav id="mobile-menu" class="hidden bg-blue-50 flex flex-col space-y-3 px-6 py-4 md:hidden">
-      <a href="index.html">Accueil</a>
-      <a href="diocese.html">Diocèse</a>
-      <a href="paroisses.html">Paroisses</a>
-      <a href="pastorale.html">Pastorale</a>
-      <a href="actualites.html">Actualités</a>
-      <a href="caritas.html" class="font-semibold text-blue-900">Caritas</a>
-      <a href="education.html">Éducation</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="index.html"><img src="assets/img/logo.svg" alt="Logo du Diocèse" class="logo"></a>
+      <nav id="nav-menu">
+        <a href="index.html">Accueil</a>
+        <a href="diocese.html">Diocèse</a>
+        <a href="paroisses.html">Paroisses</a>
+        <a href="pastorale.html">Pastorale</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="caritas.html" class="active">Caritas</a>
+        <a href="education.html">Éducation</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-toggle" id="nav-toggle">☰</div>
+    </div>
   </header>
 
   <!-- HERO -->
-  <section class="relative bg-[url('assets/img/caritas_hero.jpg')] bg-cover bg-center text-white py-24 text-center">
-    <div class="absolute inset-0 bg-gradient-to-b from-blue-900/80 to-blue-700/80"></div>
-    <div class="relative z-10 max-w-3xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Caritas & Œuvres Sociales</h1>
-      <p class="text-lg opacity-90">Agir avec foi et solidarité pour servir les plus vulnérables</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Caritas & Œuvres Sociales</h1>
+      <p>Agir avec foi et solidarité pour servir les plus vulnérables</p>
     </div>
   </section>
 
-  <!-- CONTENU -->
-  <main class="container mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold text-center mb-10 text-blue-900">Nos Actions Principales</h2>
-
-    <div class="grid md:grid-cols-3 gap-10">
+  <!-- CONTENU PRINCIPAL -->
+  <main class="container">
+    <h2>Nos Actions Principales</h2>
+    <div class="grid">
       <!-- Santé -->
-      <article class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-        <img src="assets/img/sante.jpg" alt="Santé" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-blue-900 mb-3">Santé & Bien-être</h3>
-          <p class="text-gray-700 leading-relaxed">
-            La Caritas soutient les dispensaires et centres de santé communautaires, garantissant l’accès aux soins pour tous, 
-            surtout dans les zones rurales.
-          </p>
+      <div class="card">
+        <img src="assets/img/sante.jpg" alt="Santé">
+        <div class="card-content">
+          <h3>Santé & Bien-être</h3>
+          <p>La Caritas soutient les dispensaires et centres de santé communautaires, garantissant l’accès aux soins pour tous, surtout dans les zones rurales.</p>
         </div>
-      </article>
-
+      </div>
       <!-- Éducation -->
-      <article class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-        <img src="assets/img/education_caritas.jpg" alt="Éducation" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-blue-900 mb-3">Éducation & Formation</h3>
-          <p class="text-gray-700 leading-relaxed">
-            Nous œuvrons pour offrir aux enfants défavorisés un accès à l’éducation et des formations professionnelles 
-            adaptées aux jeunes.
-          </p>
+      <div class="card">
+        <img src="assets/img/education_caritas.jpg" alt="Éducation">
+        <div class="card-content">
+          <h3>Éducation & Formation</h3>
+          <p>Nous œuvrons pour offrir aux enfants défavorisés un accès à l’éducation et des formations professionnelles adaptées aux jeunes.</p>
         </div>
-      </article>
-
+      </div>
       <!-- Développement -->
-      <article class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-        <img src="assets/img/developpement.jpg" alt="Développement" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-blue-900 mb-3">Développement Communautaire</h3>
-          <p class="text-gray-700 leading-relaxed">
-            Nos projets soutiennent l’agriculture durable, l’accès à l’eau potable et la promotion de l’entrepreneuriat local.
-          </p>
+      <div class="card">
+        <img src="assets/img/developpement.jpg" alt="Développement">
+        <div class="card-content">
+          <h3>Développement Communautaire</h3>
+          <p>Nos projets soutiennent l’agriculture durable, l’accès à l’eau potable et la promotion de l’entrepreneuriat local.</p>
         </div>
-      </article>
+      </div>
     </div>
 
     <!-- APPEL AUX DONS -->
-    <section class="mt-20 text-center bg-blue-900 text-white rounded-3xl py-12 px-6 shadow-lg">
-      <h3 class="text-3xl font-bold mb-4">Soutenez nos œuvres caritatives</h3>
-      <p class="max-w-2xl mx-auto mb-6 opacity-90">
-        Votre don contribue à changer des vies. Ensemble, construisons un monde plus juste et fraternel.  
-        Vous pouvez soutenir nos actions via virement, mobile money ou collecte locale.
-      </p>
-      <a href="#" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold py-3 px-8 rounded-full transition-all duration-300">
-        Faire un don maintenant
-      </a>
+    <section class="cta">
+      <h3>Soutenez nos œuvres caritatives</h3>
+      <p>Votre don contribue à changer des vies. Ensemble, construisons un monde plus juste et fraternel. Vous pouvez soutenir nos actions via virement, mobile money ou collecte locale.</p>
+      <a href="#">Faire un don maintenant</a>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-blue-900 text-white py-10 mt-20">
-    <div class="container mx-auto text-center space-y-3">
-      <p>© 2025 Diocèse de Kolwezi — Tous droits réservés</p>
-      <div class="flex justify-center space-x-4">
-        <a href="#" class="hover:text-yellow-400">Facebook</a>
-        <a href="#" class="hover:text-yellow-400">YouTube</a>
-        <a href="#" class="hover:text-yellow-400">Twitter</a>
-      </div>
+  <footer>
+    <p>© 2025 Diocèse de Kolwezi — Tous droits réservés</p>
+    <div>
+      <a href="#">Facebook</a> | <a href="#">YouTube</a> | <a href="#">Twitter</a>
     </div>
   </footer>
 
   <script>
-    const toggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("mobile-menu");
-    toggle.addEventListener("click", () => menu.classList.toggle("hidden"));
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+    toggle.addEventListener("click", () => menu.classList.toggle("show"));
   </script>
+
 </body>
 </html>
