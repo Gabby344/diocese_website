@@ -4,9 +4,62 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Paroisses — Diocèse de Kolwezi</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="assets/js/main.js"></script>
+
+  <!-- Boxicons -->
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    /* === RESET & BASE === */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:#333; background:#f9f9f9;}
+    a {text-decoration:none; color: inherit;}
+    img {max-width:100%; display:block;}
+
+    /* === HEADER === */
+    .site-header {background:#005a87; color:white; position:sticky; top:0; z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+    .site-header .container {display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem;}
+    .brand {display:flex; align-items:center;}
+    .brand .logo {height:50px; margin-right:0.5rem;}
+    .brand-title {font-weight:bold; font-size:1.3rem;}
+    .site-nav a {margin-left:1.5rem; padding:0.5rem; transition:0.3s;}
+    .site-nav a:hover, .site-nav a.active {background:white; color:#005a87; border-radius:5px;}
+    .nav-toggle {display:none; background:none; border:none; font-size:1.5rem; color:white; cursor:pointer;}
+
+    /* === HERO === */
+    .hero-paroisses {background:#e0f7fa; padding:5rem 1rem; text-align:center;}
+    .hero-paroisses h1 {font-size:2.5rem; color:#005a87; margin-bottom:1rem;}
+    .hero-paroisses p {font-size:1.2rem; max-width:800px; margin:0 auto;}
+
+    /* === MAP SECTION === */
+    .map-section {padding:3rem 1rem; text-align:center;}
+    .map-section h2 {color:#005a87; margin-bottom:1rem;}
+    .map-placeholder {background:#cfd8dc; height:400px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:bold; color:#333;}
+
+    /* === PARISH LIST === */
+    .parish-list {padding:3rem 1rem; max-width:1200px; margin:0 auto;}
+    .parish-list h2 {text-align:center; color:#005a87; margin-bottom:2rem;}
+    .parish-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem;}
+    .parish-card {background:white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; transition:0.3s;}
+    .parish-card:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+    .parish-card i {font-size:3rem; color:#ff9800; margin-bottom:1rem; display:block;}
+    .parish-card h3 {margin-bottom:0.5rem;}
+    .parish-card p {margin-bottom:0.3rem;}
+
+    /* === FOOTER === */
+    .site-footer {background:#005a87; color:white; text-align:center; padding:1.5rem;}
+    .site-footer a {color:#ff9800;}
+
+    /* === RESPONSIVE === */
+    @media(max-width:768px){
+      .site-nav {display:none; flex-direction:column; background:#005a87; position:absolute; top:70px; right:0; width:200px; border-radius:5px;}
+      .nav-toggle {display:block;}
+      .site-nav a {margin:0.5rem 1rem;}
+    }
+
+    /* === ANIMATION === */
+    .fade-in-section {opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards;}
+    @keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
+  </style>
 </head>
 <body class="page">
 
@@ -35,22 +88,21 @@
   <main class="container main">
 
     <!-- HERO PAROISSES -->
-    <section class="hero-paroisses">
+    <section class="hero-paroisses fade-in-section">
       <h1>Paroisses du Diocèse</h1>
       <p>Trouvez votre paroisse, horaires des messes et contacts. Explorez la carte pour localiser facilement chaque église.</p>
     </section>
 
     <!-- CARTE INTERACTIVE -->
-    <section class="map-section">
+    <section class="map-section fade-in-section">
       <h2>Carte des Paroisses</h2>
       <div id="map" class="map-placeholder">
-        <!-- Intégration future de Leaflet ou Google Maps -->
         <p>Carte interactive à venir</p>
       </div>
     </section>
 
     <!-- LISTE DES PAROISSES -->
-    <section class="parish-list">
+    <section class="parish-list fade-in-section">
       <h2>Nos Paroisses</h2>
       <div class="parish-grid">
         <article class="parish-card">
@@ -65,18 +117,28 @@
           <p><strong>Horaires des messes :</strong> Dimanche 09:00, 17:00</p>
           <p><strong>Contact :</strong> +243 0X XXX XXXX</p>
         </article>
-        <!-- Ajouter d’autres paroisses ici -->
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="site-footer fade-in-section">
     <div class="container footer-inner">
       <p>© 2025 Diocèse de Kolwezi — Tous droits réservés · <a href="README.md">Documentation</a></p>
     </div>
   </footer>
+
+  <!-- JS NAVIGATION -->
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle && toggle.addEventListener('click', ()=> {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      nav.style.display = expanded ? '' : 'flex';
+    });
+  </script>
 
 </body>
 </html>
