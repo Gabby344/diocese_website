@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.addEventListener('click', () => {
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!expanded));
-      siteNav.classList.toggle('nav-open'); // utilise CSS pour afficher / masquer avec animation
+      siteNav.classList.toggle('nav-open'); // CSS doit gérer la visibilité et l'animation
     });
   }
 
@@ -21,19 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', handleContact);
   }
 
-  // --- Scroll animations pour sections ---
+  // --- Animation au scroll ---
   const scrollSections = document.querySelectorAll('.fade-in-section');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
+  if ('IntersectionObserver' in window && scrollSections.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-  scrollSections.forEach(section => observer.observe(section));
+    scrollSections.forEach(section => observer.observe(section));
+  }
 
-  // --- Hover effect pour cartes (optionnel JS si nécessaire) ---
+  // --- Effet hover pour cartes (optionnel si besoin JS) ---
   const cards = document.querySelectorAll('.card, .pastorale-card, .parish-card, .school-card');
   cards.forEach(card => {
     card.addEventListener('mouseenter', () => card.classList.add('hovered'));
@@ -46,22 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================
 function handleContact(event) {
   event.preventDefault();
+
   const form = event.target;
   const name = form.name.value.trim();
   const email = form.email.value.trim();
   const message = form.message.value.trim();
 
-  // Validation basique
+  // Validation simple
   if (!name || !email || !message) {
     alert('Veuillez remplir tous les champs du formulaire.');
     return;
   }
 
-  // Données du formulaire
+  // Données pour envoi
   const formData = { name, email, message };
   console.log('Formulaire soumis (demo) :', formData);
 
-  // --- Remplacer par envoi réel via fetch / API si nécessaire ---
+  // TODO : Remplacer par un envoi réel via fetch / API
   alert(`Merci ${name} ! Votre message a été enregistré (demo).`);
   form.reset();
 }
