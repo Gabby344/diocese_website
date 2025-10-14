@@ -1,61 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Actualités & Événements — Diocèse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actualités & Événements — Diocèse de Kolwezi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
 </head>
-<body class="page">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Accueil du diocèse">
-        <img src="assets/img/logo.svg" alt="Logo du Diocèse" class="logo"/>
-        <span class="brand-title">Diocèse - Kolwezi</span>
+
+<body class="bg-gray-50 text-gray-800 font-[Poppins]">
+  <!-- HEADER -->
+  <header class="shadow-md bg-white sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <a href="index.html" class="flex items-center space-x-3">
+        <img src="assets/img/logo.svg" alt="Logo du Diocèse" class="h-12">
+        <span class="text-xl font-bold text-blue-900">Diocèse de Kolwezi</span>
       </a>
-      <nav class="site-nav" aria-label="Navigation principale">
-        <a href="index.html" class="">Accueil</a>
-        <a href="diocese.html" class="">Diocèse</a>
-        <a href="paroisses.html" class="">Paroisses</a>
-        <a href="pastorale.html" class="">Pastorale</a>
-        <a href="actualites.html" class="active">Actualités</a>
-        <a href="caritas.html" class="">Caritas</a>
-        <a href="education.html" class="">Éducation</a>
-        <a href="contact.html" class="">Contact</a>
+      <nav class="hidden md:flex space-x-6 text-sm font-semibold text-gray-700">
+        <a href="index.html" class="hover:text-blue-700">Accueil</a>
+        <a href="diocese.html" class="hover:text-blue-700">Diocèse</a>
+        <a href="paroisses.html" class="hover:text-blue-700">Paroisses</a>
+        <a href="pastorale.html" class="hover:text-blue-700">Pastorale</a>
+        <a href="actualites.html" class="text-blue-900 border-b-2 border-blue-900">Actualités</a>
+        <a href="caritas.html" class="hover:text-blue-700">Caritas</a>
+        <a href="education.html" class="hover:text-blue-700">Éducation</a>
+        <a href="contact.html" class="hover:text-blue-700">Contact</a>
       </nav>
-      <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir la navigation">☰</button>
+      <button class="md:hidden text-2xl text-blue-900" id="menu-toggle">☰</button>
     </div>
+
+    <!-- Menu mobile -->
+    <nav id="mobile-menu" class="hidden bg-blue-50 flex flex-col space-y-3 px-6 py-4 md:hidden">
+      <a href="index.html">Accueil</a>
+      <a href="diocese.html">Diocèse</a>
+      <a href="paroisses.html">Paroisses</a>
+      <a href="pastorale.html">Pastorale</a>
+      <a href="actualites.html" class="font-semibold text-blue-900">Actualités</a>
+      <a href="caritas.html">Caritas</a>
+      <a href="education.html">Éducation</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main class="container main">
-    
-<article>
-  <h2>Actualités récentes</h2>
-  <section class="news">
-    <article class="news-item">
-      <h3>Visite pastorale de l'Évêque</h3>
-      <p>Date: 12 octobre 2025 — Résumé de la visite et photos.</p>
-    </article>
-    <article class="news-item">
-      <h3>Journée Caritas</h3>
-      <p>Date: 02 novembre 2025 — Campagne de collecte et volontariat.</p>
-    </article>
+  <!-- HERO SECTION -->
+  <section class="relative bg-[url('assets/img/cathedrale.jpg')] bg-cover bg-center text-white py-24 text-center">
+    <div class="absolute inset-0 bg-blue-900 bg-opacity-70"></div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Actualités & Événements</h1>
+      <p class="text-lg opacity-90">Restez informés des dernières nouvelles du Diocèse de Kolwezi</p>
+    </div>
   </section>
 
-  <h3>Agenda</h3>
-  <ul>
-    <li>12/10/2025 — Visite pastorale</li>
-    <li>02/11/2025 — Journée Caritas</li>
-  </ul>
-</article>
+  <!-- ACTUALITÉS -->
+  <main class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-center mb-10 text-blue-900">Actualités Récentes</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <!-- Carte 1 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+        <img src="assets/img/eveque.jpg" alt="Visite pastorale" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-blue-900">Visite Pastorale de l'Évêque</h3>
+          <p class="text-sm text-gray-500 mb-3">12 octobre 2025</p>
+          <p class="text-gray-700 leading-relaxed">
+            L'Évêque a rendu visite aux paroisses de Kanina et Manika, partageant un message de paix et de foi avec la communauté.
+          </p>
+        </div>
+      </article>
 
+      <!-- Carte 2 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+        <img src="assets/img/caritas.jpg" alt="Journée Caritas" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-blue-900">Journée Caritas</h3>
+          <p class="text-sm text-gray-500 mb-3">02 novembre 2025</p>
+          <p class="text-gray-700 leading-relaxed">
+            Une journée de solidarité et de partage au profit des plus démunis, organisée par les jeunes du diocèse.
+          </p>
+        </div>
+      </article>
+
+      <!-- Carte 3 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+        <img src="assets/img/synode.jpg" alt="Rencontre du Synode" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-blue-900">Rencontre du Synode Diocésain</h3>
+          <p class="text-sm text-gray-500 mb-3">28 novembre 2025</p>
+          <p class="text-gray-700 leading-relaxed">
+            Les représentants paroissiaux se sont réunis pour réfléchir ensemble à l’avenir spirituel et pastoral du diocèse.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Agenda -->
+    <section class="mt-20">
+      <h3 class="text-2xl font-semibold mb-6 text-blue-900 text-center">Agenda à venir</h3>
+      <ul class="space-y-3 text-center text-gray-700">
+        <li>12/10/2025 — Visite pastorale</li>
+        <li>02/11/2025 — Journée Caritas</li>
+        <li>28/11/2025 — Synode diocésain</li>
+      </ul>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Diocèse — Tous droits réservés · <a href="README.md">Documentation</a></p>
+  <!-- FOOTER -->
+  <footer class="bg-blue-900 text-white py-10">
+    <div class="container mx-auto text-center space-y-3">
+      <p>© 2025 Diocèse de Kolwezi — Tous droits réservés</p>
+      <div class="flex justify-center space-x-4">
+        <a href="#" class="hover:text-yellow-400">Facebook</a>
+        <a href="#" class="hover:text-yellow-400">YouTube</a>
+        <a href="#" class="hover:text-yellow-400">Twitter</a>
+      </div>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
 </body>
 </html>
