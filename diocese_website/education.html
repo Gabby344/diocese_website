@@ -1,13 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Éducation — Diocèse</title>
+  <title>Éducation — Diocèse de Kolwezi</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body class="page">
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Accueil du diocèse">
@@ -15,38 +18,65 @@
         <span class="brand-title">Diocèse - Kolwezi</span>
       </a>
       <nav class="site-nav" aria-label="Navigation principale">
-        <a href="index.html" class="">Accueil</a>
-        <a href="diocese.html" class="">Diocèse</a>
-        <a href="paroisses.html" class="">Paroisses</a>
-        <a href="pastorale.html" class="">Pastorale</a>
-        <a href="actualites.html" class="">Actualités</a>
-        <a href="caritas.html" class="">Caritas</a>
+        <a href="index.html">Accueil</a>
+        <a href="diocese.html">Diocèse</a>
+        <a href="paroisses.html">Paroisses</a>
+        <a href="pastorale.html">Pastorale</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="caritas.html">Caritas</a>
         <a href="education.html" class="active">Éducation</a>
-        <a href="contact.html" class="">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir la navigation">☰</button>
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container main">
-    
-<article>
-  <h2>Écoles et Institutions</h2>
-  <p>Liste des écoles conventionnées catholiques, établissements secondaires et supérieurs gérés par le diocèse.</p>
 
-  <h3>Exemples</h3>
-  <ul>
-    <li>Lycée Sainte-Anne</li>
-    <li>Collège Saint-Pierre</li>
-  </ul>
-</article>
+    <!-- SECTION INTRO EDUCATION -->
+    <section class="education-intro">
+      <h1>Écoles et Institutions du Diocèse</h1>
+      <p class="intro">
+        Le diocèse de Kolwezi gère plusieurs établissements scolaires et institutions éducatives, offrant un enseignement de qualité et des valeurs chrétiennes.
+      </p>
+    </section>
+
+    <!-- SECTION LISTE DES ÉCOLES -->
+    <section class="education-list">
+      <h2>Nos Établissements</h2>
+      <div class="schools-grid">
+        <!-- Exemple d’école -->
+        <div class="school-card">
+          <i class='bx bx-school'></i>
+          <h3>Lycée Sainte-Anne</h3>
+          <p>Établissement secondaire offrant un enseignement général et chrétien de qualité.</p>
+        </div>
+
+        <div class="school-card">
+          <i class='bx bx-school'></i>
+          <h3>Collège Saint-Pierre</h3>
+          <p>Collège catholique proposant un programme éducatif complet et innovant.</p>
+        </div>
+
+        <!-- Ajouter d’autres écoles ici -->
+      </div>
+    </section>
+
+    <!-- SECTION ÉDUCATION SUPÉRIEURE (OPTIONNELLE) -->
+    <section class="higher-education">
+      <h2>Enseignement Supérieur</h2>
+      <p>Le diocèse soutient également des institutions supérieures et des centres de formation professionnelle pour accompagner la jeunesse vers un avenir prometteur.</p>
+    </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Diocèse — Tous droits réservés · <a href="README.md">Documentation</a></p>
+    <div class="container footer-inner">
+      <p>© 2025 Diocèse de Kolwezi — Tous droits réservés · <a href="README.md">Documentation</a></p>
     </div>
   </footer>
+
 </body>
 </html>
