@@ -1,13 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Paroisses — Diocèse</title>
+  <title>Paroisses — Diocèse de Kolwezi</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body class="page">
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Accueil du diocèse">
@@ -15,42 +18,65 @@
         <span class="brand-title">Diocèse - Kolwezi</span>
       </a>
       <nav class="site-nav" aria-label="Navigation principale">
-        <a href="index.html" class="">Accueil</a>
-        <a href="diocese.html" class="">Diocèse</a>
+        <a href="index.html">Accueil</a>
+        <a href="diocese.html">Diocèse</a>
         <a href="paroisses.html" class="active">Paroisses</a>
-        <a href="pastorale.html" class="">Pastorale</a>
-        <a href="actualites.html" class="">Actualités</a>
-        <a href="caritas.html" class="">Caritas</a>
-        <a href="education.html" class="">Éducation</a>
-        <a href="contact.html" class="">Contact</a>
+        <a href="pastorale.html">Pastorale</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="caritas.html">Caritas</a>
+        <a href="education.html">Éducation</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir la navigation">☰</button>
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container main">
-    
-<article>
-  <h2>Paroisses du Diocèse</h2>
-  <p>Carte interactive (intégration possible via Leaflet / Google Maps)</p>
-  <section class="parish-list">
-    <article class="parish">
-      <h3>Paroisse Sainte-Marie</h3>
-      <p>Horaires des messes: Dimanche 08:00, 10:30 — Contact: +243 0X XXX XXXX</p>
-    </article>
-    <article class="parish">
-      <h3>Paroisse Saint-Joseph</h3>
-      <p>Horaires des messes: Dimanche 09:00, 17:00 — Contact: +243 0X XXX XXXX</p>
-    </article>
-  </section>
-</article>
+
+    <!-- HERO PAROISSES -->
+    <section class="hero-paroisses">
+      <h1>Paroisses du Diocèse</h1>
+      <p>Trouvez votre paroisse, horaires des messes et contacts. Explorez la carte pour localiser facilement chaque église.</p>
+    </section>
+
+    <!-- CARTE INTERACTIVE -->
+    <section class="map-section">
+      <h2>Carte des Paroisses</h2>
+      <div id="map" class="map-placeholder">
+        <!-- Intégration future de Leaflet ou Google Maps -->
+        <p>Carte interactive à venir</p>
+      </div>
+    </section>
+
+    <!-- LISTE DES PAROISSES -->
+    <section class="parish-list">
+      <h2>Nos Paroisses</h2>
+      <div class="parish-grid">
+        <article class="parish-card">
+          <i class='bx bx-church'></i>
+          <h3>Paroisse Sainte-Marie</h3>
+          <p><strong>Horaires des messes :</strong> Dimanche 08:00, 10:30</p>
+          <p><strong>Contact :</strong> +243 0X XXX XXXX</p>
+        </article>
+        <article class="parish-card">
+          <i class='bx bx-church'></i>
+          <h3>Paroisse Saint-Joseph</h3>
+          <p><strong>Horaires des messes :</strong> Dimanche 09:00, 17:00</p>
+          <p><strong>Contact :</strong> +243 0X XXX XXXX</p>
+        </article>
+        <!-- Ajouter d’autres paroisses ici -->
+      </div>
+    </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Diocèse — Tous droits réservés · <a href="README.md">Documentation</a></p>
+    <div class="container footer-inner">
+      <p>© 2025 Diocèse de Kolwezi — Tous droits réservés · <a href="README.md">Documentation</a></p>
     </div>
   </footer>
+
 </body>
 </html>
